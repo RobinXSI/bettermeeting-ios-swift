@@ -1,0 +1,555 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00BE20D91A23C21300C87CCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00BE20D81A23C21300C87CCC /* Main.storyboard */; };
+		00BE20DE1A23C2DE00C87CCC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20DA1A23C2DE00C87CCC /* LoginViewController.swift */; };
+		00BE20DF1A23C2DE00C87CCC /* MeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20DB1A23C2DE00C87CCC /* MeetingViewController.swift */; };
+		00BE20E01A23C2DE00C87CCC /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20DC1A23C2DE00C87CCC /* SignupViewController.swift */; };
+		00BE20E11A23C2DE00C87CCC /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20DD1A23C2DE00C87CCC /* ToDoViewController.swift */; };
+		00BE20F11A23C4B600C87CCC /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 00BE20EA1A23C40A00C87CCC /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		00BE20F41A23C76B00C87CCC /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20F31A23C76B00C87CCC /* SwiftyJSON.swift */; };
+		00BE20FF1A23CE6F00C87CCC /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20FE1A23CE6F00C87CCC /* UserService.swift */; };
+		00BE21011A23CED200C87CCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE21001A23CED200C87CCC /* User.swift */; };
+		F3FA6EB71A07BD3000CCD623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA6EB61A07BD3000CCD623 /* AppDelegate.swift */; };
+		F3FA6EB91A07BD3000CCD623 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA6EB81A07BD3000CCD623 /* ViewController.swift */; };
+		F3FA6EBE1A07BD3000CCD623 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3FA6EBD1A07BD3000CCD623 /* Images.xcassets */; };
+		F3FA6EC11A07BD3000CCD623 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3FA6EBF1A07BD3000CCD623 /* LaunchScreen.xib */; };
+		F3FA6ECD1A07BD3000CCD623 /* BettermeetingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA6ECC1A07BD3000CCD623 /* BettermeetingTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00BE20E91A23C40A00C87CCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00BE20E41A23C40A00C87CCC /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		00BE20EB1A23C40A00C87CCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00BE20E41A23C40A00C87CCC /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = AlamofireTests;
+		};
+		00BE20ED1A23C46C00C87CCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00BE20E41A23C40A00C87CCC /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		F3FA6EC71A07BD3000CCD623 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3FA6EA91A07BD3000CCD623 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3FA6EB01A07BD3000CCD623;
+			remoteInfo = Bettermeeting;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		00BE20EF1A23C47C00C87CCC /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				00BE20F11A23C4B600C87CCC /* Alamofire.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		00BE20D81A23C21300C87CCC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		00BE20DA1A23C2DE00C87CCC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		00BE20DB1A23C2DE00C87CCC /* MeetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingViewController.swift; sourceTree = "<group>"; };
+		00BE20DC1A23C2DE00C87CCC /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		00BE20DD1A23C2DE00C87CCC /* ToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		00BE20E41A23C40A00C87CCC /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		00BE20F21A23C76B00C87CCC /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
+		00BE20F31A23C76B00C87CCC /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		00BE20FE1A23CE6F00C87CCC /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		00BE21001A23CED200C87CCC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F3FA6EB11A07BD3000CCD623 /* Bettermeeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bettermeeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3FA6EB51A07BD3000CCD623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3FA6EB61A07BD3000CCD623 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F3FA6EB81A07BD3000CCD623 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F3FA6EBD1A07BD3000CCD623 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F3FA6EC01A07BD3000CCD623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F3FA6EC61A07BD3000CCD623 /* BettermeetingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BettermeetingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3FA6ECB1A07BD3000CCD623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3FA6ECC1A07BD3000CCD623 /* BettermeetingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettermeetingTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F3FA6EAE1A07BD3000CCD623 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3FA6EC31A07BD3000CCD623 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00BE20E21A23C2E100C87CCC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				00BE20DA1A23C2DE00C87CCC /* LoginViewController.swift */,
+				00BE20DC1A23C2DE00C87CCC /* SignupViewController.swift */,
+				00BE20DD1A23C2DE00C87CCC /* ToDoViewController.swift */,
+				00BE20DB1A23C2DE00C87CCC /* MeetingViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		00BE20E31A23C39000C87CCC /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				00BE20F21A23C76B00C87CCC /* SwiftyJSON.h */,
+				00BE20F31A23C76B00C87CCC /* SwiftyJSON.swift */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		00BE20E51A23C40A00C87CCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00BE20EA1A23C40A00C87CCC /* Alamofire.framework */,
+				00BE20EC1A23C40A00C87CCC /* AlamofireTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00BE20F81A23CE1A00C87CCC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				00BE20FE1A23CE6F00C87CCC /* UserService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		00BE20FB1A23CE4000C87CCC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				00BE21001A23CED200C87CCC /* User.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F3FA6EA81A07BD3000CCD623 = {
+			isa = PBXGroup;
+			children = (
+				00BE20E41A23C40A00C87CCC /* Alamofire.xcodeproj */,
+				F3FA6EB31A07BD3000CCD623 /* Bettermeeting */,
+				F3FA6EC91A07BD3000CCD623 /* BettermeetingTests */,
+				F3FA6EB21A07BD3000CCD623 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F3FA6EB21A07BD3000CCD623 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3FA6EB11A07BD3000CCD623 /* Bettermeeting.app */,
+				F3FA6EC61A07BD3000CCD623 /* BettermeetingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3FA6EB31A07BD3000CCD623 /* Bettermeeting */ = {
+			isa = PBXGroup;
+			children = (
+				00BE20E31A23C39000C87CCC /* Libraries */,
+				00BE20FB1A23CE4000C87CCC /* Model */,
+				00BE20F81A23CE1A00C87CCC /* Services */,
+				00BE20E21A23C2E100C87CCC /* ViewController */,
+				F3FA6EB61A07BD3000CCD623 /* AppDelegate.swift */,
+				F3FA6EB81A07BD3000CCD623 /* ViewController.swift */,
+				F3FA6EBD1A07BD3000CCD623 /* Images.xcassets */,
+				F3FA6EBF1A07BD3000CCD623 /* LaunchScreen.xib */,
+				F3FA6EB41A07BD3000CCD623 /* Supporting Files */,
+				00BE20D81A23C21300C87CCC /* Main.storyboard */,
+			);
+			path = Bettermeeting;
+			sourceTree = "<group>";
+		};
+		F3FA6EB41A07BD3000CCD623 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F3FA6EB51A07BD3000CCD623 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F3FA6EC91A07BD3000CCD623 /* BettermeetingTests */ = {
+			isa = PBXGroup;
+			children = (
+				F3FA6ECC1A07BD3000CCD623 /* BettermeetingTests.swift */,
+				F3FA6ECA1A07BD3000CCD623 /* Supporting Files */,
+			);
+			path = BettermeetingTests;
+			sourceTree = "<group>";
+		};
+		F3FA6ECA1A07BD3000CCD623 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F3FA6ECB1A07BD3000CCD623 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F3FA6EB01A07BD3000CCD623 /* Bettermeeting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3FA6ED01A07BD3000CCD623 /* Build configuration list for PBXNativeTarget "Bettermeeting" */;
+			buildPhases = (
+				F3FA6EAD1A07BD3000CCD623 /* Sources */,
+				F3FA6EAE1A07BD3000CCD623 /* Frameworks */,
+				F3FA6EAF1A07BD3000CCD623 /* Resources */,
+				00BE20EF1A23C47C00C87CCC /* Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00BE20EE1A23C46C00C87CCC /* PBXTargetDependency */,
+			);
+			name = Bettermeeting;
+			productName = Bettermeeting;
+			productReference = F3FA6EB11A07BD3000CCD623 /* Bettermeeting.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F3FA6EC51A07BD3000CCD623 /* BettermeetingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3FA6ED31A07BD3000CCD623 /* Build configuration list for PBXNativeTarget "BettermeetingTests" */;
+			buildPhases = (
+				F3FA6EC21A07BD3000CCD623 /* Sources */,
+				F3FA6EC31A07BD3000CCD623 /* Frameworks */,
+				F3FA6EC41A07BD3000CCD623 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3FA6EC81A07BD3000CCD623 /* PBXTargetDependency */,
+			);
+			name = BettermeetingTests;
+			productName = BettermeetingTests;
+			productReference = F3FA6EC61A07BD3000CCD623 /* BettermeetingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F3FA6EA91A07BD3000CCD623 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = HSR;
+				TargetAttributes = {
+					F3FA6EB01A07BD3000CCD623 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					F3FA6EC51A07BD3000CCD623 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = F3FA6EB01A07BD3000CCD623;
+					};
+				};
+			};
+			buildConfigurationList = F3FA6EAC1A07BD3000CCD623 /* Build configuration list for PBXProject "Bettermeeting" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F3FA6EA81A07BD3000CCD623;
+			productRefGroup = F3FA6EB21A07BD3000CCD623 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 00BE20E51A23C40A00C87CCC /* Products */;
+					ProjectRef = 00BE20E41A23C40A00C87CCC /* Alamofire.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				F3FA6EB01A07BD3000CCD623 /* Bettermeeting */,
+				F3FA6EC51A07BD3000CCD623 /* BettermeetingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		00BE20EA1A23C40A00C87CCC /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 00BE20E91A23C40A00C87CCC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		00BE20EC1A23C40A00C87CCC /* AlamofireTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireTests.xctest;
+			remoteRef = 00BE20EB1A23C40A00C87CCC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F3FA6EAF1A07BD3000CCD623 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00BE20D91A23C21300C87CCC /* Main.storyboard in Resources */,
+				F3FA6EC11A07BD3000CCD623 /* LaunchScreen.xib in Resources */,
+				F3FA6EBE1A07BD3000CCD623 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3FA6EC41A07BD3000CCD623 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F3FA6EAD1A07BD3000CCD623 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00BE20DE1A23C2DE00C87CCC /* LoginViewController.swift in Sources */,
+				F3FA6EB91A07BD3000CCD623 /* ViewController.swift in Sources */,
+				00BE20FF1A23CE6F00C87CCC /* UserService.swift in Sources */,
+				00BE20E01A23C2DE00C87CCC /* SignupViewController.swift in Sources */,
+				00BE20DF1A23C2DE00C87CCC /* MeetingViewController.swift in Sources */,
+				00BE21011A23CED200C87CCC /* User.swift in Sources */,
+				00BE20E11A23C2DE00C87CCC /* ToDoViewController.swift in Sources */,
+				00BE20F41A23C76B00C87CCC /* SwiftyJSON.swift in Sources */,
+				F3FA6EB71A07BD3000CCD623 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3FA6EC21A07BD3000CCD623 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3FA6ECD1A07BD3000CCD623 /* BettermeetingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00BE20EE1A23C46C00C87CCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = 00BE20ED1A23C46C00C87CCC /* PBXContainerItemProxy */;
+		};
+		F3FA6EC81A07BD3000CCD623 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3FA6EB01A07BD3000CCD623 /* Bettermeeting */;
+			targetProxy = F3FA6EC71A07BD3000CCD623 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F3FA6EBF1A07BD3000CCD623 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3FA6EC01A07BD3000CCD623 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F3FA6ECE1A07BD3000CCD623 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F3FA6ECF1A07BD3000CCD623 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F3FA6ED11A07BD3000CCD623 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Bettermeeting/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0aa96fcd-7f6f-468c-9f27-40f8202cd307";
+			};
+			name = Debug;
+		};
+		F3FA6ED21A07BD3000CCD623 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Bettermeeting/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0aa96fcd-7f6f-468c-9f27-40f8202cd307";
+			};
+			name = Release;
+		};
+		F3FA6ED41A07BD3000CCD623 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BettermeetingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bettermeeting.app/Bettermeeting";
+			};
+			name = Debug;
+		};
+		F3FA6ED51A07BD3000CCD623 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BettermeetingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bettermeeting.app/Bettermeeting";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F3FA6EAC1A07BD3000CCD623 /* Build configuration list for PBXProject "Bettermeeting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3FA6ECE1A07BD3000CCD623 /* Debug */,
+				F3FA6ECF1A07BD3000CCD623 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3FA6ED01A07BD3000CCD623 /* Build configuration list for PBXNativeTarget "Bettermeeting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3FA6ED11A07BD3000CCD623 /* Debug */,
+				F3FA6ED21A07BD3000CCD623 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3FA6ED31A07BD3000CCD623 /* Build configuration list for PBXNativeTarget "BettermeetingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3FA6ED41A07BD3000CCD623 /* Debug */,
+				F3FA6ED51A07BD3000CCD623 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F3FA6EA91A07BD3000CCD623 /* Project object */;
+}
