@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		009121C61A2488D600BAB332 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009121C51A2488D600BAB332 /* Extensions.swift */; };
+		009121C81A248D0C00BAB332 /* TodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009121C71A248D0C00BAB332 /* TodoService.swift */; };
+		009121CA1A248D1500BAB332 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009121C91A248D1500BAB332 /* Todo.swift */; };
 		00BE20D91A23C21300C87CCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00BE20D81A23C21300C87CCC /* Main.storyboard */; };
 		00BE20DE1A23C2DE00C87CCC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20DA1A23C2DE00C87CCC /* LoginViewController.swift */; };
 		00BE20DF1A23C2DE00C87CCC /* MeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20DB1A23C2DE00C87CCC /* MeetingViewController.swift */; };
 		00BE20E01A23C2DE00C87CCC /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20DC1A23C2DE00C87CCC /* SignupViewController.swift */; };
-		00BE20E11A23C2DE00C87CCC /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20DD1A23C2DE00C87CCC /* ToDoViewController.swift */; };
+		00BE20E11A23C2DE00C87CCC /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20DD1A23C2DE00C87CCC /* TodoViewController.swift */; };
 		00BE20F11A23C4B600C87CCC /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 00BE20EA1A23C40A00C87CCC /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		00BE20F41A23C76B00C87CCC /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20F31A23C76B00C87CCC /* SwiftyJSON.swift */; };
 		00BE20FF1A23CE6F00C87CCC /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20FE1A23CE6F00C87CCC /* UserService.swift */; };
@@ -70,11 +72,13 @@
 
 /* Begin PBXFileReference section */
 		009121C51A2488D600BAB332 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		009121C71A248D0C00BAB332 /* TodoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
+		009121C91A248D1500BAB332 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		00BE20D81A23C21300C87CCC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		00BE20DA1A23C2DE00C87CCC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		00BE20DB1A23C2DE00C87CCC /* MeetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingViewController.swift; sourceTree = "<group>"; };
 		00BE20DC1A23C2DE00C87CCC /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
-		00BE20DD1A23C2DE00C87CCC /* ToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		00BE20DD1A23C2DE00C87CCC /* TodoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		00BE20E41A23C40A00C87CCC /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		00BE20F21A23C76B00C87CCC /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
 		00BE20F31A23C76B00C87CCC /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -113,7 +117,7 @@
 			children = (
 				00BE20DA1A23C2DE00C87CCC /* LoginViewController.swift */,
 				00BE20DC1A23C2DE00C87CCC /* SignupViewController.swift */,
-				00BE20DD1A23C2DE00C87CCC /* ToDoViewController.swift */,
+				00BE20DD1A23C2DE00C87CCC /* TodoViewController.swift */,
 				00BE20DB1A23C2DE00C87CCC /* MeetingViewController.swift */,
 				009121C51A2488D600BAB332 /* Extensions.swift */,
 			);
@@ -142,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				00BE20FE1A23CE6F00C87CCC /* UserService.swift */,
+				009121C71A248D0C00BAB332 /* TodoService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				00BE21001A23CED200C87CCC /* User.swift */,
+				009121C91A248D1500BAB332 /* Todo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -342,10 +348,12 @@
 				00BE20DE1A23C2DE00C87CCC /* LoginViewController.swift in Sources */,
 				009121C61A2488D600BAB332 /* Extensions.swift in Sources */,
 				00BE20FF1A23CE6F00C87CCC /* UserService.swift in Sources */,
+				009121CA1A248D1500BAB332 /* Todo.swift in Sources */,
 				00BE20E01A23C2DE00C87CCC /* SignupViewController.swift in Sources */,
 				00BE20DF1A23C2DE00C87CCC /* MeetingViewController.swift in Sources */,
 				00BE21011A23CED200C87CCC /* User.swift in Sources */,
-				00BE20E11A23C2DE00C87CCC /* ToDoViewController.swift in Sources */,
+				00BE20E11A23C2DE00C87CCC /* TodoViewController.swift in Sources */,
+				009121C81A248D0C00BAB332 /* TodoService.swift in Sources */,
 				00BE20F41A23C76B00C87CCC /* SwiftyJSON.swift in Sources */,
 				F3FA6EB71A07BD3000CCD623 /* AppDelegate.swift in Sources */,
 			);

@@ -6,6 +6,12 @@ import Alamofire
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    lazy var userService: UserService = {
+        var us = UserService()
+        us.userLoginDelegate = self
+        return us
+        }()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
@@ -31,39 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var username = actualUser.email
             var password = actualUser.password
             
-            Alamofire.request(.GET,"http://localhost:9000/api/user/login?username=" + username + "&password=" + password)
-                .responseJSON{ (request, response, object, error) in
-                    if(response != nil) {
-                        if(response!.statusCode == 200) {
-                            println("GET Login Successfully")
-                            let json = JSON(object!)
-                            let user = json["user"]
-                            var pushToken = user["pushToken"].string
-                            
-                            // Push-Token PUT falls anders als jetziger
-                        } else if(response!.statusCode == 401) {
-                            println("Wrong User Credentials")
-                            defaults.setObject([], forKey: "ActualUser")
-                            defaults.setBool(false, forKey: "IsLoggedIn")
-                            defaults.synchronize()
-                        } else {
-                            println("Response: " + response!.description)
-                            println("Object: " + object!.description)
-                            println("Error: " + error!.description)
-                            defaults.setObject([], forKey: "ActualUser")
-                            defaults.setBool(false, forKey: "IsLoggedIn")
-                            defaults.synchronize()
-                        }
-                    } else {
-                        defaults.setObject([], forKey: "ActualUser")
-                        defaults.setBool(false, forKey: "IsLoggedIn")
-                        defaults.synchronize()
-                        println("No Connection!")
-                    }
-                    
-            }
+            userService.loginUser(username, password: password)
         }
-        
     }
 
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
@@ -76,4 +51,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         println("Registration failed: \(error)")
     }
 }
+
+extension AppDelegate : UserLoginDelegate {
+    func loginSuccessful(user: User) {
+        let tabBarViewController: UIViewController? = self.window?.rootViewController as UIViewController?
+        if(tabBarViewController? != nil) {
+            let todoViewController = tabBarViewController!.childViewControllers[0].childViewControllers[0] as TodoViewController
+            let meetingViewController = tabBarViewController!.childViewControllers[1].childViewControllers[0] as MeetingViewController
+            todoViewController.apiReady = true
+            todoViewController.reloadData()
+        }
+        // Push Token
+        
+    }
+    func authorizationError() {
+    }
+    func networkError() {
+        let tabBarViewController: UIViewController? = self.window?.rootViewController as UIViewController?
+        if(tabBarViewController? != nil) {
+            let todoViewController = tabBarViewController!.childViewControllers[0].childViewControllers[0] as TodoViewController
+            let meetingViewController = tabBarViewController!.childViewControllers[1].childViewControllers[0] as MeetingViewController
+            todoViewController.networkError()
+            todoViewController.hideActivityIndicator()
+        }
+    }
+}
+
 

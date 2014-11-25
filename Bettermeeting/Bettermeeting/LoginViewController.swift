@@ -1,5 +1,4 @@
 import UIKit
-import Alamofire
 
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
@@ -36,7 +35,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 }
 
 extension LoginViewController : UserLoginDelegate {
-    func loginSuccessful() {
+    func loginSuccessful(user: User) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     func authorizationError() {

@@ -3,7 +3,7 @@ import UIKit
 import Alamofire
 
 protocol UserLoginDelegate {
-    func loginSuccessful()
+    func loginSuccessful(user: User)
     func authorizationError()
     func networkError()
 }
@@ -38,7 +38,7 @@ class UserService {
                     defaults.setObject(user.createDictionary(), forKey: "ActualUser")
                     defaults.setBool(true, forKey: "IsLoggedIn")
                     defaults.synchronize()
-                    self.userLoginDelegate?.loginSuccessful()
+                    self.userLoginDelegate?.loginSuccessful(user)
                     
                 } else if(response!.statusCode == 401) {
                     var defaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
