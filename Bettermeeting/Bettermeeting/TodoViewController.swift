@@ -45,5 +45,32 @@ extension TodoViewController : UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        var laterAction = UITableViewRowAction(style: .Normal, title: "Later") { (action, indexPath) -> Void in
+            tableView.editing = false
+            println("laterAction")
+        }
+        laterAction.backgroundColor = UIColorFromHex(0xDD182C, alpha: 1.0)
+        
+        var doneAction = UITableViewRowAction(style: .Default, title: "Done") { (action, indexPath) -> Void in
+            tableView.editing = false
+            println("doneAction")
+        }
+        doneAction.backgroundColor = UIColorFromHex(0x009EFF, alpha: 1.0)
+        
+        return [doneAction, laterAction]
+    }
+    
+    func Done(UITableViewRowAction!,
+        NSIndexPath!) -> Void {
+            
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    
+    }
+    
+    
+    
 }
 

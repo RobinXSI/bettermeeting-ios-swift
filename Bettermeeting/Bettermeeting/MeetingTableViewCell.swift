@@ -43,7 +43,7 @@ class MeetingTableViewCell: UITableViewCell {
             if(voted) {
                 imgVote.hidden = true
                 txtVote.hidden = true
-            }        
+            }
         }
         
         
