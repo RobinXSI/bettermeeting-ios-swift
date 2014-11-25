@@ -13,11 +13,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kZ8-WN-zMF">
-                                <rect key="frame" x="137" y="269" width="46" height="30"/>
+                                <rect key="frame" x="145" y="269" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Test">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="testTapped:" destination="gGX-Rd-271" eventType="touchUpInside" id="qyJ-dp-bVC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -47,7 +50,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Meetings" id="DMU-Mw-LdT">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="ldJ-JL-pfv"/>
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="ldJ-JL-pfv">
+                            <connections>
+                                <action selector="logoutTapped:" destination="xUn-2i-5IC" id="oa4-le-XTn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -147,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZF-MF-cgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1588" y="1341.9000000000001"/>
+            <point key="canvasLocation" x="1748" y="1320"/>
         </scene>
         <!--Login-->
         <scene sceneID="cqc-Qg-yZB">
@@ -218,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xp-ao-H1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1200" y="1341.9000000000001"/>
+            <point key="canvasLocation" x="1284" y="1320"/>
         </scene>
         <!--ToDos-->
         <scene sceneID="nps-3y-oFH">
@@ -291,6 +298,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="5ga-At-v89"/>
+        <segue reference="YeV-8p-lvs"/>
     </inferredMetricsTieBreakers>
 </document>

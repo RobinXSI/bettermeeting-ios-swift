@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		009121C61A2488D600BAB332 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009121C51A2488D600BAB332 /* Extensions.swift */; };
 		00BE20D91A23C21300C87CCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00BE20D81A23C21300C87CCC /* Main.storyboard */; };
 		00BE20DE1A23C2DE00C87CCC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20DA1A23C2DE00C87CCC /* LoginViewController.swift */; };
 		00BE20DF1A23C2DE00C87CCC /* MeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20DB1A23C2DE00C87CCC /* MeetingViewController.swift */; };
@@ -17,7 +18,6 @@
 		00BE20FF1A23CE6F00C87CCC /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20FE1A23CE6F00C87CCC /* UserService.swift */; };
 		00BE21011A23CED200C87CCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE21001A23CED200C87CCC /* User.swift */; };
 		F3FA6EB71A07BD3000CCD623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA6EB61A07BD3000CCD623 /* AppDelegate.swift */; };
-		F3FA6EB91A07BD3000CCD623 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA6EB81A07BD3000CCD623 /* ViewController.swift */; };
 		F3FA6EBE1A07BD3000CCD623 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3FA6EBD1A07BD3000CCD623 /* Images.xcassets */; };
 		F3FA6EC11A07BD3000CCD623 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3FA6EBF1A07BD3000CCD623 /* LaunchScreen.xib */; };
 		F3FA6ECD1A07BD3000CCD623 /* BettermeetingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA6ECC1A07BD3000CCD623 /* BettermeetingTests.swift */; };
@@ -69,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		009121C51A2488D600BAB332 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		00BE20D81A23C21300C87CCC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		00BE20DA1A23C2DE00C87CCC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		00BE20DB1A23C2DE00C87CCC /* MeetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +83,6 @@
 		F3FA6EB11A07BD3000CCD623 /* Bettermeeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bettermeeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3FA6EB51A07BD3000CCD623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3FA6EB61A07BD3000CCD623 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F3FA6EB81A07BD3000CCD623 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F3FA6EBD1A07BD3000CCD623 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F3FA6EC01A07BD3000CCD623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F3FA6EC61A07BD3000CCD623 /* BettermeetingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BettermeetingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +115,7 @@
 				00BE20DC1A23C2DE00C87CCC /* SignupViewController.swift */,
 				00BE20DD1A23C2DE00C87CCC /* ToDoViewController.swift */,
 				00BE20DB1A23C2DE00C87CCC /* MeetingViewController.swift */,
+				009121C51A2488D600BAB332 /* Extensions.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -175,16 +176,15 @@
 		F3FA6EB31A07BD3000CCD623 /* Bettermeeting */ = {
 			isa = PBXGroup;
 			children = (
+				F3FA6EBD1A07BD3000CCD623 /* Images.xcassets */,
+				F3FA6EB41A07BD3000CCD623 /* Supporting Files */,
 				00BE20E31A23C39000C87CCC /* Libraries */,
 				00BE20FB1A23CE4000C87CCC /* Model */,
 				00BE20F81A23CE1A00C87CCC /* Services */,
 				00BE20E21A23C2E100C87CCC /* ViewController */,
 				F3FA6EB61A07BD3000CCD623 /* AppDelegate.swift */,
-				F3FA6EB81A07BD3000CCD623 /* ViewController.swift */,
-				F3FA6EBD1A07BD3000CCD623 /* Images.xcassets */,
-				F3FA6EBF1A07BD3000CCD623 /* LaunchScreen.xib */,
-				F3FA6EB41A07BD3000CCD623 /* Supporting Files */,
 				00BE20D81A23C21300C87CCC /* Main.storyboard */,
+				F3FA6EBF1A07BD3000CCD623 /* LaunchScreen.xib */,
 			);
 			path = Bettermeeting;
 			sourceTree = "<group>";
@@ -340,7 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00BE20DE1A23C2DE00C87CCC /* LoginViewController.swift in Sources */,
-				F3FA6EB91A07BD3000CCD623 /* ViewController.swift in Sources */,
+				009121C61A2488D600BAB332 /* Extensions.swift in Sources */,
 				00BE20FF1A23CE6F00C87CCC /* UserService.swift in Sources */,
 				00BE20E01A23C2DE00C87CCC /* SignupViewController.swift in Sources */,
 				00BE20DF1A23C2DE00C87CCC /* MeetingViewController.swift in Sources */,

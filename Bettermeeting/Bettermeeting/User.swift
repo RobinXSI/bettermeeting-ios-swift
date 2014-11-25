@@ -51,4 +51,19 @@ class User {
         )
         return actualUser
     }
+    
+    class func createFromJSON(json : JSON) -> User {
+        let user = json["user"]
+        let _id = user["_id"]["$oid"].string
+        let email = user["email"].string
+        let firstName = user["firstName"].string
+        let lastName = user["lastName"].string
+        let password = user["password"].string
+        var pushToken = user["pushToken"].string
+        
+        if pushToken == nil {
+            pushToken = ""
+        }
+        return User(_id: _id!, email: email!, firstName: firstName!, lastName: lastName!, password: password!, pushToken: pushToken!)
+    }
 }

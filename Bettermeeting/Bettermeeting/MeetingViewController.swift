@@ -2,6 +2,12 @@ import UIKit
 
 class MeetingViewController: UIViewController {
     
+    lazy var userService: UserService = {
+        var us = UserService()
+        us.userLogoutDelegate = self
+        return us
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,6 +23,16 @@ class MeetingViewController: UIViewController {
         }
     }
     
-    
+    @IBAction func logoutTapped(sender: UIBarButtonItem) {
+        userService.logoutUser()
+    }
+}
 
+extension MeetingViewController : UserLogoutDelegate {
+    func logoutSuccessful() {
+        self.performSegueWithIdentifier("goto_login", sender: self)
+    }
+    func networkError() {
+        self.showAlertView("Sign out Failed!", text: "Unkown Error. View Log!")
+    }
 }

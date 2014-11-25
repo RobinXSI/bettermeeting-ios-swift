@@ -1,37 +1,93 @@
 
-import Foundation
+import UIKit
 import Alamofire
+
+protocol UserLoginDelegate {
+    func loginSuccessful()
+    func authorizationError()
+    func networkError()
+}
+
+protocol UserLogoutDelegate {
+    func logoutSuccessful()
+    func networkError()
+}
 
 class UserService {
     
+    var userLoginDelegate: UserLoginDelegate?
+    var userLogoutDelegate: UserLogoutDelegate?
+    
+    init() {
+        
+    }
     
     func loginUser(username: String, password: String) {
-        Alamofire.request(.GET,"http://localhost:9000/api/user/login?username=" + username + "&password=23" + password)
+        
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
+        Alamofire.request(.GET,"http://localhost:9000/api/user/login?username=" + username + "&password=" + password)
             .responseJSON { (request, response, object, error) in
-                println(response?.statusCode)
-                if(response!.statusCode == 401) {
-                    
-                } else {
+            if(response != nil) {
+                if(response!.statusCode == 200) {
                     println("GET Login Successfully")
                     let json = JSON(object!)
+                    let user = User.createFromJSON(json)
                     
-                    let user = json["user"]
-                    let _id = user["_id"]["$oid"].string
-                    let email = user["email"].string
-                    let firstName = user["firstName"].string
-                    let lastName = user["lastName"].string
-                    let password = user["password"].string
-                    var pushToken = user["pushToken"].string
+                    var defaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+                    defaults.setObject(user.createDictionary(), forKey: "ActualUser")
+                    defaults.setBool(true, forKey: "IsLoggedIn")
+                    defaults.synchronize()
+                    self.userLoginDelegate?.loginSuccessful()
                     
-                    if pushToken == nil {
-                        pushToken = ""
-                    }
+                } else if(response!.statusCode == 401) {
+                    var defaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+                    defaults.setObject([], forKey: "ActualUser")
+                    defaults.setBool(false, forKey: "IsLoggedIn")
+                    defaults.synchronize()
+                    self.userLoginDelegate?.authorizationError()
                     
-                    let actualUser = User(_id: _id!, email: email!, firstName: firstName!, lastName: lastName!, password: password!, pushToken: pushToken!)
+                } else {
+                    println("Response: " + response!.description)
+                    println("Object: " + object!.description)
+                    println("Error: " + error!.description)
+                    self.userLoginDelegate?.networkError()
                     
-                    println(actualUser.createDictionary())
                 }
+            } else {
+                println("No Connection!")
+                self.userLoginDelegate?.networkError()
+            }
         }
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
+    
+    func logoutUser() {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        Alamofire.request(.GET,"http://localhost:9000/api/user/logout")
+            .responseString{ (request, response, object, error) in
+            if(response != nil) {
+                if(response!.statusCode == 200) {
+                    println("GET Logout Successfully")
+                    var defaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+                    defaults.setObject([], forKey: "ActualUser")
+                    defaults.setBool(false, forKey: "IsLoggedIn")
+                    defaults.synchronize()
+                    self.userLogoutDelegate?.logoutSuccessful()
+
+                } else {
+                    println("Response: " + response!.description)
+                    println("Object: " + object!)
+                    println("Error: " + error!.description)
+                    self.userLogoutDelegate?.networkError()
+                }
+            } else {
+                println("No Connection!")
+                self.userLogoutDelegate?.networkError()
+            }
+                
+        }
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
 }
 

@@ -17,7 +17,7 @@ class ToDoViewController: UIViewController {
                     let json = JSON(object!)
                     println(json)
                 } else if(response!.statusCode == 401) {
-                    self.showAlertView("Sign in Failed!", text: "Wrong User Credentials")
+                    self.showAlertView("Unauthorized!", text: "401")
                 } else {
                     self.showAlertView("Sign in Failed!", text: "Unkown Error. View Log!")
                     println("Response: " + response!.description)
@@ -51,14 +51,7 @@ class ToDoViewController: UIViewController {
         }
     }
     
-    func showAlertView(title: String, text: String) {
-        var alertView:UIAlertView = UIAlertView()
-        alertView.title = title
-        alertView.message = text
-        alertView.delegate = self
-        alertView.addButtonWithTitle("OK")
-        alertView.show()
-    }
+    
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
