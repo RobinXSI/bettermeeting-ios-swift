@@ -16,6 +16,8 @@ class MeetingViewController: DataViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        tableView.backgroundColor = UIColorFromHex(0x323A41, alpha: 1.0)
     }
     
     override func reloadData() {
@@ -48,7 +50,6 @@ extension MeetingViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(meetings != nil) {
-            println(meetings!.count)
             return meetings!.count
         } else {
             return 0
@@ -59,8 +60,21 @@ extension MeetingViewController : UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Meeting", forIndexPath: indexPath) as MeetingTableViewCell
         let meeting = meetings![indexPath.row]
-        cell.setMeeting(meeting)
+        
+        cell.setMeeting(meeting, username: self.actualUser!.email)
+        
+        cell.selectionStyle = .None
+        cell.accessoryType = .None
+        
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "meeting_selected") {
+            var indexPath = self.tableView.indexPathForSelectedRow()
+            var destinationViewController: MeetingDetailViewController = segue.destinationViewController as MeetingDetailViewController;
+            destinationViewController.meeting = self.meetings![indexPath!.row]
+        }
     }
     
 }

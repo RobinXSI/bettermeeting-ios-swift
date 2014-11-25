@@ -7,6 +7,7 @@ class DataViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var refreshControl: UIRefreshControl!
+    var actualUser: User?
     
     lazy var userService: UserService = {
         var us = UserService()
@@ -81,13 +82,15 @@ class DataViewController: UIViewController {
     func reloadData() {
         if(self.refreshControl != nil) {
             self.refreshControl.endRefreshing()
-        } 
+        }
+        let defaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        let actualUserDictionary = defaults.dictionaryForKey("ActualUser") as NSDictionary!
+        self.actualUser = User.createFromDictionary(actualUserDictionary)
     }
     
     func refresh(sender:AnyObject) {
         self.reloadData()
     }
-    
     
     
     @IBAction func logoutTapped(sender: AnyObject) {

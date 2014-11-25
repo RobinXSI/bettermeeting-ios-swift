@@ -10,16 +10,17 @@ protocol TodoDelegate: NetworkDelegate {
 class TodoService {
     
     var todoDelegate: TodoDelegate?
+    var serverPath: String
     
     init() {
-        
+        self.serverPath = NSBundle.mainBundle().objectForInfoDictionaryKey("IPServerAdress") as String
     }
     
     func getTodos() {
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
-        Alamofire.request(.GET,"http://localhost:9000/api/user/actionpoints")
+        Alamofire.request(.GET, self.serverPath + "/api/user/actionpoints")
             .responseJSON { (request, response, object, error) in
                 if(response != nil) {
                     if(response!.statusCode == 200) {

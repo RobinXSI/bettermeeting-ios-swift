@@ -10,16 +10,17 @@ protocol MeetingDelegate: NetworkDelegate {
 class MeetingService {
     
     var meetingDelegate: MeetingDelegate?
+    var serverPath: String
     
     init() {
-        
+        self.serverPath = NSBundle.mainBundle().objectForInfoDictionaryKey("IPServerAdress") as String
     }
     
     func getMeetings() {
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
-        Alamofire.request(.GET,"http://localhost:9000/api/user/meetings")
+        Alamofire.request(.GET,self.serverPath + "/api/user/meetings")
             .responseJSON { (request, response, object, error) in
                 if(response != nil) {
                     if(response!.statusCode == 200) {

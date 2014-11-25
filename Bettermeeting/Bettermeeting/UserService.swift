@@ -14,16 +14,17 @@ class UserService {
     
     var userLoginDelegate: UserLoginDelegate?
     var userLogoutDelegate: UserLogoutDelegate?
+    var serverPath: String
     
     init() {
-        
+        self.serverPath = NSBundle.mainBundle().objectForInfoDictionaryKey("IPServerAdress") as String
     }
     
     func loginUser(username: String, password: String) {
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
-        Alamofire.request(.GET,"http://localhost:9000/api/user/login?username=" + username + "&password=" + password)
+        Alamofire.request(.GET, self.serverPath + "/api/user/login?username=" + username + "&password=" + password)
             .responseJSON { (request, response, object, error) in
             if(response != nil) {
                 if(response!.statusCode == 200) {
@@ -61,7 +62,7 @@ class UserService {
     
     func logoutUser() {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        Alamofire.request(.GET,"http://localhost:9000/api/user/logout")
+        Alamofire.request(.GET, self.serverPath + "/api/user/logout")
             .responseString{ (request, response, object, error) in
             if(response != nil) {
                 if(response!.statusCode == 200) {

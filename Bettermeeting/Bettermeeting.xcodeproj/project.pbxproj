@@ -24,6 +24,7 @@
 		00F236CA1A24B68A00354991 /* NetworkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F236C91A24B68A00354991 /* NetworkDelegate.swift */; };
 		00F236CF1A24C3FA00354991 /* MeetingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F236CE1A24C3FA00354991 /* MeetingTableViewCell.swift */; };
 		00F236D11A24C87300354991 /* CellAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F236D01A24C87300354991 /* CellAnimator.swift */; };
+		00F236D31A24D25200354991 /* MeetingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F236D21A24D25200354991 /* MeetingDetailViewController.swift */; };
 		F3FA6EB71A07BD3000CCD623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA6EB61A07BD3000CCD623 /* AppDelegate.swift */; };
 		F3FA6EBE1A07BD3000CCD623 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3FA6EBD1A07BD3000CCD623 /* Images.xcassets */; };
 		F3FA6EC11A07BD3000CCD623 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3FA6EBF1A07BD3000CCD623 /* LaunchScreen.xib */; };
@@ -94,6 +95,7 @@
 		00F236C91A24B68A00354991 /* NetworkDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDelegate.swift; sourceTree = "<group>"; };
 		00F236CE1A24C3FA00354991 /* MeetingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingTableViewCell.swift; sourceTree = "<group>"; };
 		00F236D01A24C87300354991 /* CellAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellAnimator.swift; sourceTree = "<group>"; };
+		00F236D21A24D25200354991 /* MeetingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingDetailViewController.swift; sourceTree = "<group>"; };
 		F3FA6EB11A07BD3000CCD623 /* Bettermeeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bettermeeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3FA6EB51A07BD3000CCD623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3FA6EB61A07BD3000CCD623 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -185,8 +187,9 @@
 		00F236CD1A24C3E500354991 /* Meeting */ = {
 			isa = PBXGroup;
 			children = (
-				00BE20DB1A23C2DE00C87CCC /* MeetingViewController.swift */,
 				00F236CE1A24C3FA00354991 /* MeetingTableViewCell.swift */,
+				00BE20DB1A23C2DE00C87CCC /* MeetingViewController.swift */,
+				00F236D21A24D25200354991 /* MeetingDetailViewController.swift */,
 			);
 			name = Meeting;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				009121CA1A248D1500BAB332 /* Todo.swift in Sources */,
 				00F236CA1A24B68A00354991 /* NetworkDelegate.swift in Sources */,
 				009121CC1A24AB9800BAB332 /* DataViewController.swift in Sources */,
+				00F236D31A24D25200354991 /* MeetingDetailViewController.swift in Sources */,
 				00BE20E01A23C2DE00C87CCC /* SignupViewController.swift in Sources */,
 				00F236D11A24C87300354991 /* CellAnimator.swift in Sources */,
 				00BE20DF1A23C2DE00C87CCC /* MeetingViewController.swift in Sources */,
