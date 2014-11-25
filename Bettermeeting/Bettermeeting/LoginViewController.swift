@@ -38,7 +38,9 @@ extension LoginViewController : UserLoginDelegate {
     func loginSuccessful(user: User) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    func authorizationError() {
+}
+extension LoginViewController: NetworkDelegate {
+    func authenticationError() {
         self.showAlertView("Sign in Failed!", text: "Wrong User Credentials")
     }
     func networkError() {

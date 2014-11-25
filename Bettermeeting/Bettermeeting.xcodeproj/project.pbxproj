@@ -10,6 +10,8 @@
 		009121C61A2488D600BAB332 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009121C51A2488D600BAB332 /* Extensions.swift */; };
 		009121C81A248D0C00BAB332 /* TodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009121C71A248D0C00BAB332 /* TodoService.swift */; };
 		009121CA1A248D1500BAB332 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009121C91A248D1500BAB332 /* Todo.swift */; };
+		009121CC1A24AB9800BAB332 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009121CB1A24AB9800BAB332 /* DataViewController.swift */; };
+		009121CE1A24AF9800BAB332 /* MeetingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009121CD1A24AF9800BAB332 /* MeetingService.swift */; };
 		00BE20D91A23C21300C87CCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00BE20D81A23C21300C87CCC /* Main.storyboard */; };
 		00BE20DE1A23C2DE00C87CCC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20DA1A23C2DE00C87CCC /* LoginViewController.swift */; };
 		00BE20DF1A23C2DE00C87CCC /* MeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20DB1A23C2DE00C87CCC /* MeetingViewController.swift */; };
@@ -19,6 +21,7 @@
 		00BE20F41A23C76B00C87CCC /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20F31A23C76B00C87CCC /* SwiftyJSON.swift */; };
 		00BE20FF1A23CE6F00C87CCC /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20FE1A23CE6F00C87CCC /* UserService.swift */; };
 		00BE21011A23CED200C87CCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE21001A23CED200C87CCC /* User.swift */; };
+		00F236CA1A24B68A00354991 /* NetworkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F236C91A24B68A00354991 /* NetworkDelegate.swift */; };
 		F3FA6EB71A07BD3000CCD623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA6EB61A07BD3000CCD623 /* AppDelegate.swift */; };
 		F3FA6EBE1A07BD3000CCD623 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3FA6EBD1A07BD3000CCD623 /* Images.xcassets */; };
 		F3FA6EC11A07BD3000CCD623 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3FA6EBF1A07BD3000CCD623 /* LaunchScreen.xib */; };
@@ -74,6 +77,8 @@
 		009121C51A2488D600BAB332 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		009121C71A248D0C00BAB332 /* TodoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
 		009121C91A248D1500BAB332 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		009121CB1A24AB9800BAB332 /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		009121CD1A24AF9800BAB332 /* MeetingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingService.swift; sourceTree = "<group>"; };
 		00BE20D81A23C21300C87CCC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		00BE20DA1A23C2DE00C87CCC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		00BE20DB1A23C2DE00C87CCC /* MeetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +89,7 @@
 		00BE20F31A23C76B00C87CCC /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		00BE20FE1A23CE6F00C87CCC /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		00BE21001A23CED200C87CCC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		00F236C91A24B68A00354991 /* NetworkDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDelegate.swift; sourceTree = "<group>"; };
 		F3FA6EB11A07BD3000CCD623 /* Bettermeeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bettermeeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3FA6EB51A07BD3000CCD623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3FA6EB61A07BD3000CCD623 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +123,7 @@
 			children = (
 				00BE20DA1A23C2DE00C87CCC /* LoginViewController.swift */,
 				00BE20DC1A23C2DE00C87CCC /* SignupViewController.swift */,
+				009121CB1A24AB9800BAB332 /* DataViewController.swift */,
 				00BE20DD1A23C2DE00C87CCC /* TodoViewController.swift */,
 				00BE20DB1A23C2DE00C87CCC /* MeetingViewController.swift */,
 				009121C51A2488D600BAB332 /* Extensions.swift */,
@@ -147,6 +154,8 @@
 			children = (
 				00BE20FE1A23CE6F00C87CCC /* UserService.swift */,
 				009121C71A248D0C00BAB332 /* TodoService.swift */,
+				009121CD1A24AF9800BAB332 /* MeetingService.swift */,
+				00F236C91A24B68A00354991 /* NetworkDelegate.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -348,7 +357,10 @@
 				00BE20DE1A23C2DE00C87CCC /* LoginViewController.swift in Sources */,
 				009121C61A2488D600BAB332 /* Extensions.swift in Sources */,
 				00BE20FF1A23CE6F00C87CCC /* UserService.swift in Sources */,
+				009121CE1A24AF9800BAB332 /* MeetingService.swift in Sources */,
 				009121CA1A248D1500BAB332 /* Todo.swift in Sources */,
+				00F236CA1A24B68A00354991 /* NetworkDelegate.swift in Sources */,
+				009121CC1A24AB9800BAB332 /* DataViewController.swift in Sources */,
 				00BE20E01A23C2DE00C87CCC /* SignupViewController.swift in Sources */,
 				00BE20DF1A23C2DE00C87CCC /* MeetingViewController.swift in Sources */,
 				00BE21011A23CED200C87CCC /* User.swift in Sources */,

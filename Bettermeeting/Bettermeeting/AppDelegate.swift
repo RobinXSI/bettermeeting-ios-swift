@@ -56,23 +56,39 @@ extension AppDelegate : UserLoginDelegate {
     func loginSuccessful(user: User) {
         let tabBarViewController: UIViewController? = self.window?.rootViewController as UIViewController?
         if(tabBarViewController? != nil) {
-            let todoViewController = tabBarViewController!.childViewControllers[0].childViewControllers[0] as TodoViewController
-            let meetingViewController = tabBarViewController!.childViewControllers[1].childViewControllers[0] as MeetingViewController
+            
+            let meetingViewController = tabBarViewController!.childViewControllers[0].childViewControllers[0] as DataViewController
+            let todoViewController = tabBarViewController!.childViewControllers[1].childViewControllers[0] as DataViewController
+            meetingViewController.apiReady = true
             todoViewController.apiReady = true
+            meetingViewController.reloadData()
             todoViewController.reloadData()
         }
         // Push Token
-        
     }
-    func authorizationError() {
+}
+
+extension AppDelegate : NetworkDelegate {
+    func authenticationError() {
+        let tabBarViewController: UIViewController? = self.window?.rootViewController as UIViewController?
+        if(tabBarViewController? != nil) {
+            let meetingViewController = tabBarViewController!.childViewControllers[0].childViewControllers[0] as DataViewController
+            let todoViewController = tabBarViewController!.childViewControllers[1].childViewControllers[0] as DataViewController
+            meetingViewController.apiReady = true
+            todoViewController.apiReady = true
+            meetingViewController.authenticationError()
+            todoViewController.authenticationError()
+        }
     }
     func networkError() {
         let tabBarViewController: UIViewController? = self.window?.rootViewController as UIViewController?
         if(tabBarViewController? != nil) {
-            let todoViewController = tabBarViewController!.childViewControllers[0].childViewControllers[0] as TodoViewController
-            let meetingViewController = tabBarViewController!.childViewControllers[1].childViewControllers[0] as MeetingViewController
+            let meetingViewController = tabBarViewController!.childViewControllers[0].childViewControllers[0] as DataViewController
+            let todoViewController = tabBarViewController!.childViewControllers[1].childViewControllers[0] as DataViewController
+            meetingViewController.apiReady = true
+            todoViewController.apiReady = true
+            meetingViewController.networkError()
             todoViewController.networkError()
-            todoViewController.hideActivityIndicator()
         }
     }
 }

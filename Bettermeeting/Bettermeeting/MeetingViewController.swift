@@ -1,38 +1,49 @@
 import UIKit
+import Foundation
 
-class MeetingViewController: UIViewController {
+class MeetingViewController: DataViewController {
     
-    lazy var userService: UserService = {
-        var us = UserService()
-        us.userLogoutDelegate = self
-        return us
-    }()
+    @IBOutlet weak var tableView: UITableView!
     
+    lazy var meetingService: MeetingService = {
+        var ms = MeetingService()
+        ms.meetingDelegate = self
+        return ms
+        }()
     
     override func viewDidLoad() {
-        super.viewDidLoad()    
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
+        super.viewDidLoad()
         
-        let defaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        let isLoggedIn:Bool = defaults.boolForKey("IsLoggedIn") as Bool
-        if(!isLoggedIn) {
-            self.performSegueWithIdentifier("goto_login", sender: self)
-        }
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
-    @IBAction func logoutTapped(sender: UIBarButtonItem) {
-        userService.logoutUser()
+    override func reloadData() {
+        if(apiReady) {
+            meetingService.getMeetings()
+        }
     }
 }
 
-extension MeetingViewController : UserLogoutDelegate {
-    func logoutSuccessful() {
-        self.performSegueWithIdentifier("goto_login", sender: self)
+extension MeetingViewController : MeetingDelegate {
+    func meetingSuccessful() {
+        
     }
-    func networkError() {
-        self.showAlertView("Sign out Failed!", text: "Unkown Error. View Log!")
+}
+
+
+extension MeetingViewController : UITableViewDataSource, UITableViewDelegate {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
     }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCellStyle.Value2, reuseIdentifier: nil)
+        
+        cell.textLabel.text = "hallo"
+        cell.detailTextLabel?.text = "asdfasdfasdfasdf"
+        
+        return cell
+    }
+    
 }

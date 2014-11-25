@@ -2,15 +2,12 @@
 import UIKit
 import Alamofire
 
-protocol UserLoginDelegate {
+protocol UserLoginDelegate: NetworkDelegate {
     func loginSuccessful(user: User)
-    func authorizationError()
-    func networkError()
 }
 
-protocol UserLogoutDelegate {
+protocol UserLogoutDelegate: NetworkDelegate {
     func logoutSuccessful()
-    func networkError()
 }
 
 class UserService {
@@ -45,7 +42,7 @@ class UserService {
                     defaults.setObject([], forKey: "ActualUser")
                     defaults.setBool(false, forKey: "IsLoggedIn")
                     defaults.synchronize()
-                    self.userLoginDelegate?.authorizationError()
+                    self.userLoginDelegate?.authenticationError()
                     
                 } else {
                     println("Response: " + response!.description)

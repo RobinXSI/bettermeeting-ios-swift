@@ -21,9 +21,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="ToDos" id="PLV-uo-wOn">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="MJO-ld-3Il">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="0ko-ls-6cd">
                             <connections>
-                                <action selector="logoutTapped:" destination="gGX-Rd-271" id="xw3-bC-63Y"/>
+                                <action selector="logoutTapped:" destination="gGX-Rd-271" id="VM2-pc-eXF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -55,12 +55,13 @@
                     <navigationItem key="navigationItem" title="Meetings" id="DMU-Mw-LdT">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="ldJ-JL-pfv">
                             <connections>
-                                <action selector="logoutTapped:" destination="xUn-2i-5IC" id="oa4-le-XTn"/>
+                                <action selector="logoutTapped:" destination="xUn-2i-5IC" id="OyC-cN-KUM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="tableView" destination="UeR-Rb-XU8" id="cAg-dx-zIV"/>
                         <segue destination="EiR-T9-uF8" kind="modal" identifier="goto_login" id="YeV-8p-lvs"/>
                     </connections>
                 </viewController>
@@ -262,8 +263,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Idh-wI-9t7" kind="relationship" relationship="viewControllers" id="5Vz-R3-fZI"/>
                         <segue destination="cSq-pp-Dei" kind="relationship" relationship="viewControllers" id="t4Q-gJ-DCo"/>
+                        <segue destination="Idh-wI-9t7" kind="relationship" relationship="viewControllers" id="5Vz-R3-fZI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59Q-iC-seA" userLabel="First Responder" sceneMemberID="firstResponder"/>

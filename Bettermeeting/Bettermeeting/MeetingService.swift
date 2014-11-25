@@ -2,45 +2,44 @@
 import UIKit
 import Alamofire
 
-protocol TodoDelegate: NetworkDelegate {
-    func todoSuccessful(todos: [Todo])
+protocol MeetingDelegate: NetworkDelegate {
+    func meetingSuccessful()
 }
 
 
-class TodoService {
+class MeetingService {
     
-    var todoDelegate: TodoDelegate?
+    var meetingDelegate: MeetingDelegate?
     
     init() {
         
     }
     
-    func getTodos() {
+    func getMeetings() {
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
-        Alamofire.request(.GET,"http://localhost:9000/api/user/actionpoints")
+        Alamofire.request(.GET,"http://localhost:9000/api/user/meetings")
             .responseJSON { (request, response, object, error) in
                 if(response != nil) {
                     if(response!.statusCode == 200) {
-                        println("GET ToDo Successfully")
+                        println("GET Meeting Successfully")
                         let json = JSON(object!)
-                        //let todos = Todo.createFromJSON(json)
-                        
-                        self.todoDelegate?.todoSuccessful([])
+                        println(json)
+                        self.meetingDelegate?.meetingSuccessful()
                         
                     } else if(response!.statusCode == 401) {
-                        self.todoDelegate?.authenticationError()
+                        self.meetingDelegate?.authenticationError()
                         
                     } else {
                         println("Response: " + response!.description)
                         println("Object: " + object!.description)
                         println("Error: " + error!.description)
-                        self.todoDelegate?.networkError()
+                        self.meetingDelegate?.networkError()
                     }
                 } else {
                     println("No Connection!")
-                    self.todoDelegate?.networkError()
+                    self.meetingDelegate?.networkError()
                 }
         }
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
