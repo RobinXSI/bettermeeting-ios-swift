@@ -22,6 +22,8 @@
 		00BE20FF1A23CE6F00C87CCC /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE20FE1A23CE6F00C87CCC /* UserService.swift */; };
 		00BE21011A23CED200C87CCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE21001A23CED200C87CCC /* User.swift */; };
 		00F236CA1A24B68A00354991 /* NetworkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F236C91A24B68A00354991 /* NetworkDelegate.swift */; };
+		00F236CF1A24C3FA00354991 /* MeetingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F236CE1A24C3FA00354991 /* MeetingTableViewCell.swift */; };
+		00F236D11A24C87300354991 /* CellAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F236D01A24C87300354991 /* CellAnimator.swift */; };
 		F3FA6EB71A07BD3000CCD623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA6EB61A07BD3000CCD623 /* AppDelegate.swift */; };
 		F3FA6EBE1A07BD3000CCD623 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3FA6EBD1A07BD3000CCD623 /* Images.xcassets */; };
 		F3FA6EC11A07BD3000CCD623 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3FA6EBF1A07BD3000CCD623 /* LaunchScreen.xib */; };
@@ -90,6 +92,8 @@
 		00BE20FE1A23CE6F00C87CCC /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		00BE21001A23CED200C87CCC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		00F236C91A24B68A00354991 /* NetworkDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDelegate.swift; sourceTree = "<group>"; };
+		00F236CE1A24C3FA00354991 /* MeetingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingTableViewCell.swift; sourceTree = "<group>"; };
+		00F236D01A24C87300354991 /* CellAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellAnimator.swift; sourceTree = "<group>"; };
 		F3FA6EB11A07BD3000CCD623 /* Bettermeeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bettermeeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3FA6EB51A07BD3000CCD623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3FA6EB61A07BD3000CCD623 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,12 +125,13 @@
 		00BE20E21A23C2E100C87CCC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				00F236CD1A24C3E500354991 /* Meeting */,
+				00F236CC1A24C3DA00354991 /* ToDo */,
 				00BE20DA1A23C2DE00C87CCC /* LoginViewController.swift */,
 				00BE20DC1A23C2DE00C87CCC /* SignupViewController.swift */,
 				009121CB1A24AB9800BAB332 /* DataViewController.swift */,
-				00BE20DD1A23C2DE00C87CCC /* TodoViewController.swift */,
-				00BE20DB1A23C2DE00C87CCC /* MeetingViewController.swift */,
 				009121C51A2488D600BAB332 /* Extensions.swift */,
+				00F236D01A24C87300354991 /* CellAnimator.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -167,6 +172,23 @@
 				009121C91A248D1500BAB332 /* Todo.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		00F236CC1A24C3DA00354991 /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+				00BE20DD1A23C2DE00C87CCC /* TodoViewController.swift */,
+			);
+			name = ToDo;
+			sourceTree = "<group>";
+		};
+		00F236CD1A24C3E500354991 /* Meeting */ = {
+			isa = PBXGroup;
+			children = (
+				00BE20DB1A23C2DE00C87CCC /* MeetingViewController.swift */,
+				00F236CE1A24C3FA00354991 /* MeetingTableViewCell.swift */,
+			);
+			name = Meeting;
 			sourceTree = "<group>";
 		};
 		F3FA6EA81A07BD3000CCD623 = {
@@ -362,11 +384,13 @@
 				00F236CA1A24B68A00354991 /* NetworkDelegate.swift in Sources */,
 				009121CC1A24AB9800BAB332 /* DataViewController.swift in Sources */,
 				00BE20E01A23C2DE00C87CCC /* SignupViewController.swift in Sources */,
+				00F236D11A24C87300354991 /* CellAnimator.swift in Sources */,
 				00BE20DF1A23C2DE00C87CCC /* MeetingViewController.swift in Sources */,
 				00BE21011A23CED200C87CCC /* User.swift in Sources */,
 				00BE20E11A23C2DE00C87CCC /* TodoViewController.swift in Sources */,
 				009121C81A248D0C00BAB332 /* TodoService.swift in Sources */,
 				00BE20F41A23C76B00C87CCC /* SwiftyJSON.swift in Sources */,
+				00F236CF1A24C3FA00354991 /* MeetingTableViewCell.swift in Sources */,
 				F3FA6EB71A07BD3000CCD623 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -3,7 +3,7 @@ import UIKit
 import Alamofire
 
 protocol MeetingDelegate: NetworkDelegate {
-    func meetingSuccessful()
+    func meetingSuccessful(json: JSON)
 }
 
 
@@ -25,8 +25,7 @@ class MeetingService {
                     if(response!.statusCode == 200) {
                         println("GET Meeting Successfully")
                         let json = JSON(object!)
-                        println(json)
-                        self.meetingDelegate?.meetingSuccessful()
+                        self.meetingDelegate?.meetingSuccessful(json)
                         
                     } else if(response!.statusCode == 401) {
                         self.meetingDelegate?.authenticationError()

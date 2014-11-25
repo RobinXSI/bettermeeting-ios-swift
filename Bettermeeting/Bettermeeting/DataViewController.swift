@@ -4,6 +4,10 @@ import UIKit
 
 class DataViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    var refreshControl: UIRefreshControl!
+    
     lazy var userService: UserService = {
         var us = UserService()
         us.userLogoutDelegate = self
@@ -32,6 +36,10 @@ class DataViewController: UIViewController {
         if(!apiReady) {
             showActivityIndicatory(self.view)
         }
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refreshControl)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -71,8 +79,16 @@ class DataViewController: UIViewController {
     }
     
     func reloadData() {
-        
+        if(self.refreshControl != nil) {
+            self.refreshControl.endRefreshing()
+        } 
     }
+    
+    func refresh(sender:AnyObject) {
+        self.reloadData()
+    }
+    
+    
     
     @IBAction func logoutTapped(sender: AnyObject) {
         userService.logoutUser()

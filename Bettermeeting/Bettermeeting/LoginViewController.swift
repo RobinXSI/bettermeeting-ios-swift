@@ -36,6 +36,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
 extension LoginViewController : UserLoginDelegate {
     func loginSuccessful(user: User) {
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        appDelegate.loginSuccessful(user)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

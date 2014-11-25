@@ -3,7 +3,6 @@ import Foundation
 
 class TodoViewController: DataViewController {
 
-    @IBOutlet weak var tableView: UITableView!
    
     lazy var todoService: TodoService = {
         var ts = TodoService()
@@ -19,12 +18,11 @@ class TodoViewController: DataViewController {
     }
     
     override func reloadData() {
+        super.reloadData()
         if(apiReady) {
             todoService.getTodos()
         }
     }
-    
-    
 }
 
 extension TodoViewController : TodoDelegate {
