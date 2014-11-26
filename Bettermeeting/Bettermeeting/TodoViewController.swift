@@ -33,6 +33,48 @@ class TodoViewController: DataViewController, TodoDelegate  {
     
     func todoLater(indexRow: Int) {
         
+        let alert = UIAlertController(
+            title: "Don't have enough time?",
+            message: "Do your ToDo later",
+            preferredStyle: UIAlertControllerStyle.ActionSheet
+        )
+        let plus4hours = UIAlertAction(
+            title: "Add 4 Hours",
+            style: UIAlertActionStyle.Default)
+            { (alert) -> Void in
+                self.todoService.addTime(self.todos[indexRow], indexRow: indexRow, timeInHours: 4)
+            }
+        let plus24hours = UIAlertAction(
+            title: "Add 1 day",
+            style: UIAlertActionStyle.Default)
+            { (alert) -> Void in
+                self.todoService.addTime(self.todos[indexRow], indexRow: indexRow, timeInHours: 24)
+        }
+        let plus48hours = UIAlertAction(
+            title: "Add 2 days",
+            style: UIAlertActionStyle.Default)
+            { (alert) -> Void in
+                self.todoService.addTime(self.todos[indexRow], indexRow: indexRow, timeInHours: 48)
+        }
+        let plus1week = UIAlertAction(
+            title: "Add 1 week",
+            style: UIAlertActionStyle.Default)
+            { (alert) -> Void in
+                self.todoService.addTime(self.todos[indexRow], indexRow: indexRow, timeInHours: 168)
+        }
+        let cancelButton = UIAlertAction(
+            title: "Cancel",
+            style: UIAlertActionStyle.Cancel)
+            { (alert) -> Void in
+                println("Cancel Pressed")
+            }
+        
+        alert.addAction(plus4hours)
+        alert.addAction(plus24hours)
+        alert.addAction(plus48hours)
+        alert.addAction(plus1week)
+        alert.addAction(cancelButton)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }
 extension TodoViewController : TodoDelegate {
@@ -45,6 +87,13 @@ extension TodoViewController : TodoDelegate {
     
     func markAsDoneSuccessful(json: JSON, indexRow: Int) {
         self.todos.removeAtIndex(indexRow)
+        if(tableView != nil) {
+            tableView.reloadData()
+        }
+    }
+    
+    func doLater(todo: JSON, indexRow: Int, timeInHours: Int) {
+        self.todos[indexRow] = todo
         if(tableView != nil) {
             tableView.reloadData()
         }
