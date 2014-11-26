@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		009121C61A2488D600BAB332 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009121C51A2488D600BAB332 /* Extensions.swift */; };
 		009121C81A248D0C00BAB332 /* TodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009121C71A248D0C00BAB332 /* TodoService.swift */; };
-		009121CA1A248D1500BAB332 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009121C91A248D1500BAB332 /* Todo.swift */; };
 		009121CC1A24AB9800BAB332 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009121CB1A24AB9800BAB332 /* DataViewController.swift */; };
 		009121CE1A24AF9800BAB332 /* MeetingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009121CD1A24AF9800BAB332 /* MeetingService.swift */; };
 		00BE20D91A23C21300C87CCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00BE20D81A23C21300C87CCC /* Main.storyboard */; };
@@ -79,7 +78,6 @@
 /* Begin PBXFileReference section */
 		009121C51A2488D600BAB332 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		009121C71A248D0C00BAB332 /* TodoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
-		009121C91A248D1500BAB332 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		009121CB1A24AB9800BAB332 /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		009121CD1A24AF9800BAB332 /* MeetingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingService.swift; sourceTree = "<group>"; };
 		00BE20D81A23C21300C87CCC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				00BE21001A23CED200C87CCC /* User.swift */,
-				009121C91A248D1500BAB332 /* Todo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -384,7 +381,6 @@
 				00BE20FF1A23CE6F00C87CCC /* UserService.swift in Sources */,
 				00F236D81A2609CE00354991 /* TodoTableViewCell.swift in Sources */,
 				009121CE1A24AF9800BAB332 /* MeetingService.swift in Sources */,
-				009121CA1A248D1500BAB332 /* Todo.swift in Sources */,
 				00F236CA1A24B68A00354991 /* NetworkDelegate.swift in Sources */,
 				009121CC1A24AB9800BAB332 /* DataViewController.swift in Sources */,
 				00F236D31A24D25200354991 /* MeetingDetailViewController.swift in Sources */,

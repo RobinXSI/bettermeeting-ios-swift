@@ -87,5 +87,30 @@ class UserService {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
     }
+    
+    func updatePushToken(newPushToken: String) {
+        
+        let parameters = [
+            "pushToken": newPushToken
+        ]
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        Alamofire.request(.PUT, self.serverPath + "/api/user/pushtoken", parameters: parameters, encoding: .JSON)
+            .responseString{ (request, response, object, error) in
+            if(response != nil) {
+                if(response!.statusCode == 201) {
+                    println("PUT Pushtoken successfully")
+                } else {
+                    println("Response: " + response!.description)
+                    println("Object: " + object!)
+                    println("Error: " + error!.description)
+                    self.userLogoutDelegate?.networkError()
+                }
+            } else {
+                println("No Connection!")
+                self.userLogoutDelegate?.networkError()
+            }
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        }
+    }
 }
 

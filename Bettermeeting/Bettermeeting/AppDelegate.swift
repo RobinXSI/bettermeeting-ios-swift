@@ -7,6 +7,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    var pushToken: String?
+    
     lazy var userService: UserService = {
         var us = UserService()
         us.userLoginDelegate = self
@@ -56,8 +58,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         let token = deviceToken.description
-        let tokenWithoutWhitespace = token.stringByReplacingOccurrencesOfString(" ", withString: "", options: nil, range: nil)
-        println("\(tokenWithoutWhitespace)")
+        self.pushToken = token.stringByReplacingOccurrencesOfString(" ", withString: "", options: nil, range: nil)
+            .stringByReplacingOccurrencesOfString("<", withString: "", options: nil, range: nil)
+            .stringByReplacingOccurrencesOfString(">", withString: "", options: nil, range: nil)
+        println("\(self.pushToken!)")
+        
+        
+        
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
@@ -77,7 +84,14 @@ extension AppDelegate : UserLoginDelegate {
             meetingViewController.reloadData()
             todoViewController.reloadData()
         }
-        // Push Token
+        
+        if(self.pushToken != nil) {
+            println("Eigener Pushtoken: " + self.pushToken!)
+            if(user.pushToken == "" || user.pushToken != self.pushToken!) {
+               println("update")
+                userService.updatePushToken(self.pushToken!)
+            }
+        }
     }
 }
 
