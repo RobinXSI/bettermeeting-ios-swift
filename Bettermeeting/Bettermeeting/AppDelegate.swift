@@ -86,9 +86,7 @@ extension AppDelegate : UserLoginDelegate {
         }
         
         if(self.pushToken != nil) {
-            println("Eigener Pushtoken: " + self.pushToken!)
             if(user.pushToken == "" || user.pushToken != self.pushToken!) {
-               println("update")
                 userService.updatePushToken(self.pushToken!)
             }
         }
