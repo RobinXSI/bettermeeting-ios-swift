@@ -9,7 +9,7 @@ class MeetingTableViewCell: UITableViewCell {
     @IBOutlet weak var txtGoal: UILabel!
     @IBOutlet weak var txtVote: UILabel!
     @IBOutlet weak var imgVote: UIImageView!
-    
+
     
     func setMeeting(meeting: JSON, username: String) {
         txtGoal.text = meeting["goal"].string

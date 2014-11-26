@@ -61,7 +61,7 @@ extension MeetingViewController : UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("Meeting", forIndexPath: indexPath) as MeetingTableViewCell
         let meeting = meetings![indexPath.row]
         
-        cell.setMeeting(meeting, username: self.actualUser!.email)
+        cell.setMeeting(meeting, username:self.actualUser!.email)
         
         cell.selectionStyle = .None
         cell.accessoryType = .None
@@ -74,6 +74,7 @@ extension MeetingViewController : UITableViewDataSource, UITableViewDelegate {
             var indexPath = self.tableView.indexPathForSelectedRow()
             var destinationViewController: MeetingDetailViewController = segue.destinationViewController as MeetingDetailViewController;
             destinationViewController.meeting = self.meetings![indexPath!.row]
+            destinationViewController.user = self.actualUser
         }
     }
     

@@ -21,28 +21,28 @@ class TodoService {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         Alamofire.request(.GET, self.serverPath + "/api/user/actionpoints")
-            .responseJSON { (request, response, object, error) in
-                if(response != nil) {
-                    if(response!.statusCode == 200) {
-                        println("GET ToDo Successfully")
-                        let json = JSON(object!)
-                        //let todos = Todo.createFromJSON(json)
-                        
-                        self.todoDelegate?.todoSuccessful([])
-                        
-                    } else if(response!.statusCode == 401) {
-                        self.todoDelegate?.authenticationError()
-                        
-                    } else {
-                        println("Response: " + response!.description)
-                        println("Object: " + object!.description)
-                        println("Error: " + error!.description)
-                        self.todoDelegate?.networkError()
-                    }
+        .responseJSON { (request, response, object, error) in
+            if(response != nil) {
+                if(response!.statusCode == 200) {
+                    println("GET ToDo Successfully")
+                    let json = JSON(object!)
+                    //let todos = Todo.createFromJSON(json)
+                    
+                    self.todoDelegate?.todoSuccessful([])
+                    
+                } else if(response!.statusCode == 401) {
+                    self.todoDelegate?.authenticationError()
+                    
                 } else {
-                    println("No Connection!")
+                    println("Response: " + response!.description)
+                    println("Object: " + object!.description)
+                    println("Error: " + error!.description)
                     self.todoDelegate?.networkError()
                 }
+            } else {
+                println("No Connection!")
+                self.todoDelegate?.networkError()
+            }
         }
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
