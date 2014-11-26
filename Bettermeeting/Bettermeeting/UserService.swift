@@ -56,8 +56,9 @@ class UserService {
                 println("No Connection!")
                 self.userLoginDelegate?.networkError()
             }
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        
     }
     
     func logoutUser() {
@@ -83,9 +84,8 @@ class UserService {
                 println("No Connection!")
                 self.userLogoutDelegate?.networkError()
             }
-                
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
 }
 

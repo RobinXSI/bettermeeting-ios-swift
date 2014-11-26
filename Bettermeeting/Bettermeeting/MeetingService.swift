@@ -48,7 +48,6 @@ class MeetingService {
             }
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
-        
     }
     
     func postMeeting(meeting: JSON) {

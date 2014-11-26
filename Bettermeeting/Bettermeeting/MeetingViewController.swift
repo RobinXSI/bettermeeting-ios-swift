@@ -9,15 +9,12 @@ class MeetingViewController: DataViewController {
         }()
     
     var meetings: JSON?
-    var didAnimateCell:[NSIndexPath: Bool] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
-        
-        tableView.backgroundColor = UIColorFromHex(0x323A41, alpha: 1.0)
     }
     
     override func reloadData() {
@@ -30,20 +27,15 @@ class MeetingViewController: DataViewController {
 
 extension MeetingViewController : MeetingDelegate {
     func meetingSuccessful(json: JSON) {
-        meetings = json
-        tableView.reloadData()
+        self.meetings = json
+        if(tableView != nil) {
+            tableView.reloadData()
+        }
     }
 }
 
 extension MeetingViewController : UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if didAnimateCell[indexPath] == nil || didAnimateCell[indexPath]! == false {
-            didAnimateCell[indexPath] = true
-            CellAnimator.animate(cell)
-        }
-    }
-    
+        
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }

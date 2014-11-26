@@ -1,14 +1,15 @@
 import UIKit
 import Foundation
 
-class TodoViewController: DataViewController {
+class TodoViewController: DataViewController, TodoDelegate  {
 
-   
     lazy var todoService: TodoService = {
         var ts = TodoService()
         ts.todoDelegate = self
         return ts
         }()
+    
+    var todos: JSON!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,23 +25,36 @@ class TodoViewController: DataViewController {
         }
     }
 }
-
 extension TodoViewController : TodoDelegate {
-    func todoSuccessful(todos: [Todo]) {
-        println("Todos Successful")
+    func todoSuccessful(json: JSON) {
+        self.todos = json
+        if(tableView != nil) {
+            tableView.reloadData()
+        }
     }
 }
 
 extension TodoViewController : UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if(todos != nil) {
+            return todos!.count
+        } else {
+            return 0
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.Value2, reuseIdentifier: nil)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Todo", forIndexPath: indexPath) as TodoTableViewCell
+        let todo = todos![indexPath.row]
+        cell.setTodo(todo)
         
-        cell.textLabel.text = "hallo"
-        cell.detailTextLabel?.text = "asdfasdfasdfasdf"
+        cell.selectionStyle = .None
+        cell.accessoryType = .None
         
         return cell
     }
@@ -61,16 +75,10 @@ extension TodoViewController : UITableViewDataSource, UITableViewDelegate {
         return [doneAction, laterAction]
     }
     
-    func Done(UITableViewRowAction!,
-        NSIndexPath!) -> Void {
-            
-    }
-    
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    
+        // Intentionally blank. Required to use UITableViewRowActions
     }
-    
-    
+        
     
 }
 

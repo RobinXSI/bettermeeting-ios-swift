@@ -3,7 +3,7 @@ import UIKit
 import Alamofire
 
 protocol TodoDelegate: NetworkDelegate {
-    func todoSuccessful(todos: [Todo])
+    func todoSuccessful(json: JSON)
 }
 
 
@@ -26,10 +26,7 @@ class TodoService {
                 if(response!.statusCode == 200) {
                     println("GET ToDo Successfully")
                     let json = JSON(object!)
-                    //let todos = Todo.createFromJSON(json)
-                    
-                    self.todoDelegate?.todoSuccessful([])
-                    
+                    self.todoDelegate?.todoSuccessful(json)
                 } else if(response!.statusCode == 401) {
                     self.todoDelegate?.authenticationError()
                     
@@ -43,8 +40,8 @@ class TodoService {
                 println("No Connection!")
                 self.todoDelegate?.networkError()
             }
-        }
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        }        
     }
 }
 

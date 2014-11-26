@@ -34,13 +34,19 @@ class DataViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         if(!apiReady) {
             showActivityIndicatory(self.view)
         }
         self.refreshControl = UIRefreshControl()
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
-        self.tableView.addSubview(refreshControl)
+        
+        tableView.backgroundColor = UIColorFromHex(0x323A41, alpha: 1.0)
+        
+        tableView.addSubview(refreshControl)
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -51,6 +57,8 @@ class DataViewController: UIViewController {
         if(!isLoggedIn) {
             self.performSegueWithIdentifier("goto_login", sender: self)
         }
+        
+        self.reloadData()
     }
     
     func showActivityIndicatory(uiView: UIView) {
@@ -85,7 +93,9 @@ class DataViewController: UIViewController {
         }
         let defaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         let actualUserDictionary = defaults.dictionaryForKey("ActualUser") as NSDictionary!
-        self.actualUser = User.createFromDictionary(actualUserDictionary)
+        if(actualUserDictionary != nil) {
+            self.actualUser = User.createFromDictionary(actualUserDictionary)
+        }
     }
     
     func refresh(sender:AnyObject) {
