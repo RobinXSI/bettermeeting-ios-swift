@@ -14,6 +14,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        txtEmail.delegate = self
+        txtPassword.delegate = self
     }
     
     @IBAction func loginTapped(sender: AnyObject) {
@@ -31,6 +34,27 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         } else {
             userService.loginUser(username, password: password)
         }
+    }
+}
+
+extension LoginViewController : UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        var nextTag = textField.tag + 1
+        
+        var nextResponder = textField.superview?.viewWithTag(nextTag)
+        
+        if(nextResponder != nil) {
+            nextResponder?.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+            self.loginTapped(self)
+        }
+        return false
+    }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.txtEmail.resignFirstResponder()
+        self.txtPassword.resignFirstResponder()
     }
 }
 
