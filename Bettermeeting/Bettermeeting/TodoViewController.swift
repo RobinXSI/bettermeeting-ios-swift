@@ -9,7 +9,9 @@ class TodoViewController: DataViewController, TodoDelegate  {
         return ts
         }()
     
-    var todos: JSON!
+    //var todos: JSON!
+    
+    var todos: [JSON]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +26,25 @@ class TodoViewController: DataViewController, TodoDelegate  {
             todoService.getTodos()
         }
     }
+    
+    func todoDone(indexRow: Int) {
+        todoService.markAsDone(todos[indexRow], indexRow: indexRow)
+    }
+    
+    func todoLater(indexRow: Int) {
+        
+    }
 }
 extension TodoViewController : TodoDelegate {
     func todoSuccessful(json: JSON) {
-        self.todos = json
+        self.todos = json.array
+        if(tableView != nil) {
+            tableView.reloadData()
+        }
+    }
+    
+    func markAsDoneSuccessful(json: JSON, indexRow: Int) {
+        self.todos.removeAtIndex(indexRow)
         if(tableView != nil) {
             tableView.reloadData()
         }
@@ -62,13 +79,13 @@ extension TodoViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
         var laterAction = UITableViewRowAction(style: .Normal, title: "Later") { (action, indexPath) -> Void in
             tableView.editing = false
-            println("laterAction")
+            self.todoLater(indexPath.row)
         }
         laterAction.backgroundColor = UIColorFromHex(0xDD182C, alpha: 1.0)
         
         var doneAction = UITableViewRowAction(style: .Default, title: "Done") { (action, indexPath) -> Void in
             tableView.editing = false
-            println("doneAction")
+            self.todoDone(indexPath.row)
         }
         doneAction.backgroundColor = UIColorFromHex(0x009EFF, alpha: 1.0)
         

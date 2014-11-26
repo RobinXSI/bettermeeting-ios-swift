@@ -50,12 +50,6 @@ class MeetingService {
         }
     }
     
-    func postMeeting(meeting: JSON) {
-        var id : String = meeting["_id"]["$oid"].string!
-        
-        Alamofire.request(.PUT, self.serverPath + "/api/meetings/id")
-    }
-    
     func voteOnMeeting(meeting: JSON, type: String, up: Bool) {
         
         let parameters = [
@@ -67,7 +61,7 @@ class MeetingService {
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 
-        Alamofire.request(.PUT, "http://localhost:9000/api/meetings/" + id + "/vote/" + type + "/" + upDown, parameters: parameters)
+        Alamofire.request(.PUT, self.serverPath + "/api/meetings/" + id + "/vote/" + type + "/" + upDown, parameters: parameters)
         .responseJSON { (request, response, object, error) in
             if(response != nil) {
                 if(response!.statusCode == 200) {
