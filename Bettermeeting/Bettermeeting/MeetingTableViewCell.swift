@@ -26,24 +26,18 @@ class MeetingTableViewCell: UITableViewCell {
         formatter.dateFormat = "EEE"
         txtWeekDay.text = formatter.stringFromDate(createdDate).uppercaseString
         
-        if(meeting["organizer"].string == username) {
-            self.backgroundColor = UIColorFromHex(0xCE1836, alpha: 1.0)
+        self.backgroundColor = UIColorFromHex(0x009989, alpha: 1.0)
+        
+        var voted = false
+        for(index: String, voteOnGoal: JSON) in meeting["votesOnGoal"] {
+            if(voteOnGoal["email"].string == username) {
+                voted = true
+                break
+            }
+        }
+        if(voted) {
             imgVote.hidden = true
             txtVote.hidden = true
-        } else {
-            self.backgroundColor = UIColorFromHex(0x009989, alpha: 1.0)
-            
-            var voted = false
-            for(index: String, voteOnGoal: JSON) in meeting["votesOnGoal"] {
-                if(voteOnGoal["email"].string == username) {
-                    voted = true
-                    break
-                }
-            }
-            if(voted) {
-                imgVote.hidden = true
-                txtVote.hidden = true
-            }
         }
         
         

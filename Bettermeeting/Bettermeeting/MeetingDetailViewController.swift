@@ -55,38 +55,32 @@ class MeetingDetailViewController: UIViewController {
         btnGoalDown.setTitle("", forState: UIControlState.Normal)
         btnGoalDown.backgroundColor = UIColorFromHex(0xDD182C, alpha: 1.0)
         
-        if(meeting["organizer"].string == user.email) {
-            btnEfficiencyUp.enabled = false
-            btnEfficiencyDown.enabled = false
-            btnGoalUp.enabled = false
-            btnGoalDown.enabled = false
-        } else {
-            for(index: String, voteOnGoal: JSON) in meeting["votesOnGoal"] {
-                if(voteOnGoal["email"].string == user.email) {
-                    if(voteOnGoal["voteValue"].int == 1) {
-                        println("Positives Voting on Goal")
-                        btnGoalDown.backgroundColor = UIColorFromHex(0xE0E0E0, alpha: 1.0)
-                    } else {
-                        println("Negatives Voting on Goal")
-                        btnGoalUp.backgroundColor = UIColorFromHex(0xE0E0E0, alpha: 1.0)
-                    }
-                    break
+        
+        for(index: String, voteOnGoal: JSON) in meeting["votesOnGoal"] {
+            if(voteOnGoal["email"].string == user.email) {
+                if(voteOnGoal["voteValue"].int == 1) {
+                    println("Positives Voting on Goal")
+                    btnGoalDown.backgroundColor = UIColorFromHex(0xE0E0E0, alpha: 1.0)
+                } else {
+                    println("Negatives Voting on Goal")
+                    btnGoalUp.backgroundColor = UIColorFromHex(0xE0E0E0, alpha: 1.0)
                 }
+                break
             }
-            
-            for(index: String, voteOnEfficiency: JSON) in meeting["votesOnEfficiency"] {
-                if(voteOnEfficiency["email"].string == user.email) {
-                    if(voteOnEfficiency["voteValue"].int == 1) {
-                        println("Positives Voting on Efficiency")
-                        btnEfficiencyDown.backgroundColor = UIColorFromHex(0xE0E0E0, alpha: 1.0)
-                    } else {
-                        println("Negatives Voting on Efficiency")
-                        btnEfficiencyUp.backgroundColor = UIColorFromHex(0xE0E0E0, alpha: 1.0)
-                    }
-                    break
+        }
+        
+        for(index: String, voteOnEfficiency: JSON) in meeting["votesOnEfficiency"] {
+            if(voteOnEfficiency["email"].string == user.email) {
+                if(voteOnEfficiency["voteValue"].int == 1) {
+                    println("Positives Voting on Efficiency")
+                    btnEfficiencyDown.backgroundColor = UIColorFromHex(0xE0E0E0, alpha: 1.0)
+                } else {
+                    println("Negatives Voting on Efficiency")
+                    btnEfficiencyUp.backgroundColor = UIColorFromHex(0xE0E0E0, alpha: 1.0)
                 }
+                break
             }
-        }  
+        }
     }
     
     @IBAction func tippedEfficiencyDown(sender: UIButton) {
