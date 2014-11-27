@@ -38,8 +38,8 @@ class MeetingService {
                         
                     } else {
                         println("Response: " + response!.description)
-                        println("Object: " + object!.description)
-                        println("Error: " + error!.description)
+                        //println("Object: " + object!.description)
+                        //println("Error: " + error!.description)
                         self.meetingDelegate?.networkError()
                     }
                 } else {
@@ -72,8 +72,8 @@ class MeetingService {
                         
                     } else {
                         println("Response: " + response!.description)
-                        println("Object: " + object!.description)
-                        println("Error: " + error!.description)
+                        //println("Object: " + object!.description)
+                        //println("Error: " + error!.description)
                         self.meetingDelegate?.networkError()
                     }
                 } else {

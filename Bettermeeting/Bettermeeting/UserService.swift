@@ -47,8 +47,8 @@ class UserService {
                     
                 } else {
                     println("Response: " + response!.description)
-                    println("Object: " + object!.description)
-                    println("Error: " + error!.description)
+                    //println("Object: " + object!.description)
+                    //println("Error: " + error!.description)
                     self.userLoginDelegate?.networkError()
                     
                 }
@@ -76,8 +76,8 @@ class UserService {
 
                 } else {
                     println("Response: " + response!.description)
-                    println("Object: " + object!)
-                    println("Error: " + error!.description)
+                    //println("Object: " + object!)
+                    //println("Error: " + error!.description)
                     self.userLogoutDelegate?.networkError()
                 }
             } else {
@@ -101,8 +101,8 @@ class UserService {
                     println("PUT Pushtoken successfully")
                 } else {
                     println("Response: " + response!.description)
-                    println("Object: " + object!)
-                    println("Error: " + error!.description)
+                    //println("Object: " + object!)
+                    //println("Error: " + error!.description)
                     self.userLogoutDelegate?.networkError()
                 }
             } else {

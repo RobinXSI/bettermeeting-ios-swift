@@ -34,8 +34,8 @@ class TodoService {
                         
                     } else {
                         println("Response: " + response!.description)
-                        println("Object: " + object!.description)
-                        println("Error: " + error!.description)
+                        //println("Object: " + object!.description)
+                        //println("Error: " + error!.description)
                         self.todoDelegate?.networkError()
                     }
                 } else {
@@ -66,8 +66,8 @@ class TodoService {
                         
                     } else {
                         println("Response: " + response!.description)
-                        println("Object: " + object!.description)
-                        println("Error: " + error!.description)
+                        //println("Object: " + object!.description)
+                        //println("Error: " + error!.description)
                         self.todoDelegate?.networkError()
                     }
                 } else {
@@ -99,8 +99,8 @@ class TodoService {
                         
                     } else {
                         println("Response: " + response!.description)
-                        println("Object: " + object!.description)
-                        println("Error: " + error!.description)
+                        //println("Object: " + object!.description)
+                        //println("Error: " + error!.description)
                         self.todoDelegate?.networkError()
                     }
                 } else {
