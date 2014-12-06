@@ -23,7 +23,7 @@ class UserService {
     func loginUser(username: String, password: String) {
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        
+
         Alamofire.request(.GET, self.serverPath + "/api/user/login?username=" + username + "&password=" + password)
             .responseJSON { (request, response, object, error) in
             if(response != nil) {
@@ -56,6 +56,7 @@ class UserService {
                 println("No Connection!")
                 self.userLoginDelegate?.networkError()
             }
+        
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
         

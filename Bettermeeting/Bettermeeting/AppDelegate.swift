@@ -64,6 +64,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         println("\(self.pushToken!)")
         
         
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
+
+        
+        
         
     }
     
